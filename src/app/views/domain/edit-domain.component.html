@@ -3,7 +3,7 @@
     <div class="col-lg-10">
         <h2>Domains</h2>
         <ol class="breadcrumb">
-            <h5>Create Domain</h5>
+            <h5>Edit Domain</h5>
         </ol>
     </div>
     <div class="col-lg-2">
@@ -38,7 +38,7 @@
             </div>
             <div class="ibox-content">
 
-              <form class="form-horizontal" name="form" (ngSubmit)="f.form.valid && createDomain()" #f="ngForm" novalidate>
+              <form class="form-horizontal" name="form" (ngSubmit)="f.form.valid && editDomain()" #f="ngForm" novalidate>
                     <div class="form-group"><label class="col-sm-2 control-label">Domain Name</label>
                         <div class="col-sm-10">
                           <input type="text" class="form-control" name="name" placeholder="Name" [(ngModel)]="model.name" #name="ngModel" required />

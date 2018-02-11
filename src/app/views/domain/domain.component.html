@@ -52,7 +52,7 @@
                   <td>{{ domain.id }}</td>
                   <td>{{ domain.name }}</td>
                   <td>{{ domain.code }}</td>
-                  <td><a href="#">Edit</a> | <a href="#">Delete</a> </td>
+                  <td><a (click)="editDomain(domain)">Edit</a> | <a (click)="deleteDomain(domain.id)">Delete</a> </td>
                 </tr>
                 <tr *ngIf="persons?.length == 0">
                   <td colspan="3" class="no-data-available">No data!</td>

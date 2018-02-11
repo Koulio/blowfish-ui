@@ -4,7 +4,8 @@
             <h1 class="logo-name">IN+</h1>
         </div> -->
         <h3>Welcome to Blowfish</h3>
-        <p>Login in</p><alert></alert>
+        <p>Login in</p>
+        <alert></alert>
         <form class="m-t" name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
               <input type="text" class="form-control" name="username" placeholder="Username" [(ngModel)]="model.username" #username="ngModel" required />

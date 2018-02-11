@@ -8,19 +8,19 @@ import {LoginComponent} from "./login.component";
 
 import {PeityModule } from '../../components/charts/peity';
 import {SparklineModule } from '../../components/charts/sparkline';
-import { AlertComponent } from '../../_directives/index';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
-    LoginComponent,
-    AlertComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     PeityModule,
     SparklineModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   exports: [
     LoginComponent

@@ -21,7 +21,6 @@ import {LayoutsModule} from "./components/common/layouts/layouts.module";
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers/index';
-import { AlertComponent } from './_directives/index';
 import { AuthGuard } from './_guards/index';
 import { JwtInterceptor } from './_helpers/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
@@ -30,7 +29,7 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
 @NgModule({
   declarations: [
     AppComponent
-    ],
+      ],
   imports: [
     BrowserModule,
     FormsModule,

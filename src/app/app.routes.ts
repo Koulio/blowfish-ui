@@ -3,6 +3,7 @@ import {Routes} from "@angular/router";
 import {DashboardComponent} from "./views/dashboard/dashboard.component";
 import {DomainComponent} from "./views/domain/domain.component";
 import {CreateDomainComponent} from "./views/domain/create-domain.component";
+import {EditDomainComponent} from "./views/domain/edit-domain.component";
 import {UsersComponent} from "./views/users/users.component";
 import {LoginComponent} from "./views/login/login.component";
 
@@ -25,6 +26,7 @@ export const ROUTES:Routes = [
       {path: 'dashboard', component: DashboardComponent},
       {path: 'domain', component: DomainComponent},
       {path: 'createdomain', component: CreateDomainComponent},
+      {path: 'editdomain', component: EditDomainComponent},
       {path: 'users', component: UsersComponent}
     ]
   },

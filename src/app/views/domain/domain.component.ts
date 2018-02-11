@@ -29,8 +29,6 @@ class DataTablesResponse {
 export class DomainComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
-  persons: Person[];
-
   domains: Domain[] = [];
 
 constructor(private http: HttpClient,private router: Router,private domainService: DomainService) {}
@@ -39,30 +37,6 @@ constructor(private http: HttpClient,private router: Router,private domainServic
 
   ngOnInit() {
     this.loadAllDomain();
-    // const that = this;
-    //
-    // this.dtOptions = {
-    //   pagingType: 'full_numbers',
-    //   pageLength: 10,
-    //   serverSide: true,
-    //   processing: true,
-    //   ajax: (dataTablesParameters: any, callback) => {
-    //     that.http
-    //       .post<DataTablesResponse>(
-    //         'https://angular-datatables-demo-server.herokuapp.com/',
-    //         dataTablesParameters, {}
-    //       ).subscribe(resp => {
-    //         that.persons = resp.data;
-    //
-    //         callback({
-    //           recordsTotal: resp.recordsTotal,
-    //           recordsFiltered: resp.recordsFiltered,
-    //           data: []
-    //         });
-    //       });
-    //   },
-    //   columns: [{ data: 'id' }, { data: 'firstName' }, { data: 'lastName' },{ data: 'id'}]
-    // };
   }
 
   activeRoute(routename: string): boolean{
@@ -71,6 +45,22 @@ constructor(private http: HttpClient,private router: Router,private domainServic
 
   private loadAllDomain() {
       this.domainService.getAll().subscribe(domains => { this.domains = domains; });
+  }
+
+  editDomain(domain: Domain){
+    this.domainService.selectedDomain = domain;
+    this.router.navigate(['/home/editdomain']);
+  }
+
+
+  deleteDomain(id: number){
+    this.domainService.delete(id)
+        .subscribe(
+            data => {
+                this.domainService.getAll().subscribe(domains => { this.domains = domains; });
+            },
+            error => {
+            });
   }
 
 }
