@@ -14,6 +14,7 @@ import {DashboardModule} from "./views/dashboard/dashboard.module";
 import {LoginModule} from "./views/login/login.module";
 import {DomainModule} from "./views/domain/domain.module";
 import {UsersModule} from "./views/users/users.module";
+import {RolesModule} from "./views/roles/roles.module";
 
 // App modules/components
 import {LayoutsModule} from "./components/common/layouts/layouts.module";
@@ -24,7 +25,6 @@ import { fakeBackendProvider } from './_helpers/index';
 import { AuthGuard } from './_guards/index';
 import { JwtInterceptor } from './_helpers/index';
 import { AlertService, AuthenticationService, UserService } from './_services/index';
-
 
 @NgModule({
   declarations: [
@@ -40,6 +40,7 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
     LoginModule,
     DomainModule,
     UsersModule,
+    RolesModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [

@@ -5,26 +5,21 @@ import { FormsModule } from '@angular/forms';
 
 import { SharedModule } from '../../shared/shared.module';
 
-import {DomainComponent} from "./domain.component";
-
-// Chart.js Angular 2 Directive by Valor Software (npm)
-import { ChartsModule } from 'ng2-charts/ng2-charts';
-
-import { FlotModule } from '../../components/charts/flotChart';
-import { IboxtoolsModule } from '../../components/common/iboxtools/iboxtools.module';
-import { JVectorMapModule } from '../../components/map/jvectorMap';
-import { DataTablesModule } from 'angular-datatables';
+import { DomainComponent} from "./domain.component";
 import { CreateDomainComponent } from './create-domain.component';
-
-import {DomainService } from '../../_services/index';
 import { EditDomainComponent } from './edit-domain.component';
+import { DomainService } from '../../_services/index';
+import { ListDomainComponent } from './list-domain.component';
+
+import { DomainRoutes }  from './domain.routes';
+
 
 
 @NgModule({
-  declarations: [DomainComponent, CreateDomainComponent, EditDomainComponent],
+  declarations: [DomainComponent, CreateDomainComponent, EditDomainComponent, ListDomainComponent],
   providers:[DomainService],
-  imports     : [SharedModule,FormsModule,RouterModule,BrowserModule,ChartsModule, FlotModule,IboxtoolsModule,JVectorMapModule,DataTablesModule],
-  exports     : [DomainComponent,CreateDomainComponent,EditDomainComponent],
+  imports     : [SharedModule,FormsModule,RouterModule,BrowserModule,DomainRoutes],
+  exports     : [DomainComponent,CreateDomainComponent,EditDomainComponent,ListDomainComponent],
 })
 
 export class DomainModule {}
