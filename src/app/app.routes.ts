@@ -11,6 +11,10 @@ import {RolesComponent} from "./views/roles/roles.component";
 import {CreateRoleComponent} from "./views/roles/create-role.component";
 import {ListRoleComponent} from "./views/roles/list-role.component";
 import {EditRoleComponent} from "./views/roles/edit-role.component";
+import { PermissionsComponent} from "./views/permissions/permissions.component";
+import { CreatePermissionsComponent } from './views/permissions/create-permissions.component';
+import { ListPermissionsComponent } from './views/permissions/list-permissions.component';
+import { EditPermissionsComponent } from './views/permissions/edit-permissions.component';
 
 import {BlankLayoutComponent} from "./components/common/layouts/blankLayout.component";
 import {BasicLayoutComponent} from "./components/common/layouts/basicLayout.component";
@@ -61,7 +65,23 @@ export const ROUTES:Routes = [
            path: 'edit',
            component: EditRoleComponent
          }
-  	   ]}
+  	   ]},
+       {path: 'permissions',
+             component: PermissionsComponent,
+             children: [
+        {
+           path: 'create',
+           component: CreatePermissionsComponent
+        },
+        {
+           path: 'list',
+           component: ListPermissionsComponent
+         },
+          {
+            path: 'edit',
+            component: EditPermissionsComponent
+          }
+       ]}
     ]
   },
 

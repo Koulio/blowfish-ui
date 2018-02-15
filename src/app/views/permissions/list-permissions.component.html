@@ -3,7 +3,7 @@
         <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <a [routerLink]="['../create']" routerLinkActive="active"><button class="btn btn-primary " type="button"><i class="fa fa-plus-square"></i>&nbsp;Create Domain</button></a>
+                <a [routerLink]="['../create']" routerLinkActive="active"><button class="btn btn-primary " type="button"><i class="fa fa-plus-square"></i>&nbsp;Create Permission</button></a>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -30,24 +30,24 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Domain Name</th>
-                  <th>Domain Code</th>
+                  <th>Name</th>
+                  <th>Code</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let domain of domains" class="gradeX">
-                  <td>{{ domain.id }}</td>
-                  <td>{{ domain.name }}</td>
-                  <td>{{ domain.code }}</td>
+                <tr *ngFor="let permission of permissions" class="gradeX">
+                  <td>{{ permission.id }}</td>
+                  <td>{{ permission.name }}</td>
+                  <td>{{ permission.code }}</td>
                   <td class="text-right">
                       <div class="btn-group">
-                          <a (click)="editDomain(permission)"><button class="btn-white btn btn-xs">Edit</button></a>
-                          <a (click)="deleteDomain(permission.id)"><button class="btn-white btn btn-xs">Delete</button></a>
+                          <a (click)="editPermission(permission)"><button class="btn-white btn btn-xs">Edit</button></a>
+                          <a (click)="deletePermission(permission.id)"><button class="btn-white btn btn-xs">Delete</button></a>
                       </div>
                   </td>
                 </tr>
-                <tr *ngIf="domains?.length == 0">
+                <tr *ngIf="permissions?.length == 0">
                   <td colspan="3" class="no-data-available">No data!</td>
                 </tr>
               </tbody>

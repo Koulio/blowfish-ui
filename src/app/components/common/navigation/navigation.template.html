@@ -29,16 +29,13 @@
       <li [ngClass]="{active: activeRoute('app-domain')}">
         <a [routerLink]="['/home/domain']"><i class="fa fa-th-large"></i> <span class="nav-label">Domains</span></a>
       </li>
-      <li [ngClass]="{active: activeRoute('app-roles')}">
-        <a [routerLink]="['/home/roles']"><i class="fa fa-th-large"></i> <span class="nav-label">Roles</span></a>
-      </li>
-      <!-- <li [ngClass]="{active: activeRoute('dashboards')}">
+      <li [ngClass]="{active: activeRoute('dashboards')}">
         <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Roles/Permissions</span> <span class="fa arrow"></span> </a>
         <ul class="nav nav-second-level collapse" [ngClass]="{in: activeRoute('dashboards')}">
-          <li [ngClass]="{active: activeRoute('dashboard')}"><a [routerLink]="['/dashboard/dashboard1']">Roles</a></li>
-          <li [ngClass]="{active: activeRoute('dashboard')}"><a [routerLink]="['/dashboard/dashboard2']">Permissions</a></li>
+          <li [ngClass]="{active: activeRoute('app-roles')}"><a [routerLink]="['/home/roles']">Roles</a></li>
+          <li [ngClass]="{active: activeRoute('app-permissions')}"><a [routerLink]="['/home/permissions']">Permissions</a></li>
         </ul>
-      </li> -->
+      </li>
       <!-- <li [ngClass]="{active: activeRoute('login')}">
         <a [routerLink]="['/login']"><i class="fa fa-th-large"></i> <span class="nav-label">Terminals</span></a>
       </li> -->

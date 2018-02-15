@@ -3,7 +3,7 @@
         <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <a [routerLink]="['../create']" routerLinkActive="active"><button class="btn btn-primary " type="button"><i class="fa fa-wrench"></i>&nbsp;Create Role</button></a>
+                <a [routerLink]="['../create']" routerLinkActive="active"><button class="btn btn-primary " type="button"><i class="fa fa-plus-square"></i>&nbsp;Create Role</button></a>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -30,8 +30,8 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>First name</th>
-                  <th>Last name</th>
+                  <th>Role Name</th>
+                  <th>Code</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -40,9 +40,14 @@
                   <td>{{ role.id }}</td>
                   <td>{{ role.name }}</td>
                   <td>{{ role.code }}</td>
-                  <td><a (click)="editRole(role)">Edit</a> | <a (click)="deleteRole(role.id)">Delete</a> </td>
+                  <td class="text-right">
+                      <div class="btn-group">
+                          <a (click)="editRole(permission)"><button class="btn-white btn btn-xs">Edit</button></a>
+                          <a (click)="deleteRole(permission.id)"><button class="btn-white btn btn-xs">Delete</button></a>
+                      </div>
+                  </td>
                 </tr>
-                <tr *ngIf="persons?.length == 0">
+                <tr *ngIf="roles?.length == 0">
                   <td colspan="3" class="no-data-available">No data!</td>
                 </tr>
               </tbody>
