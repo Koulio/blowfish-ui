@@ -19,6 +19,11 @@ export class PermissionsService {
         return this.http.get('/api/domain/' + id);
     }
 
+    getByRoleId(roleId: number) {
+      console.log('Role id - ' + roleId);
+        return this.http.get<Permission[]>(environment.apiEndpoint + '/permission?roleId=' + roleId);
+    }
+
     create(permission: Permission) {
         return this.http.post(environment.apiEndpoint + '/permission', permission);
     }

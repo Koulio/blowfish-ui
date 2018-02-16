@@ -1,18 +1,17 @@
-import { Component, OnInit, } from '@angular/core';
-
-import { FlotChartDirective } from '../../components/charts/flotChart';
-
-declare var jQuery:any;
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html'
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent  implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+                private router: Router) { }
 
   ngOnInit() {
+    this.router.navigate([ 'list'], { relativeTo: this.route })
   }
 
 }

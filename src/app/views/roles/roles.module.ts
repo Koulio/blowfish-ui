@@ -10,14 +10,15 @@ import { EditRoleComponent } from './edit-role.component';
 
 import { RolesRoutes }  from './roles.routes';
 import { RoleService } from '../../_services/index';
+import { SetRolePermissionsComponent } from './set-role-permissions.component';
 
 
 
 @NgModule({
-  declarations: [RolesComponent, CreateRoleComponent, ListRoleComponent, EditRoleComponent],
+  declarations: [RolesComponent, CreateRoleComponent, ListRoleComponent, EditRoleComponent, SetRolePermissionsComponent],
   providers:[RoleService],
   imports     : [CommonModule,RolesRoutes,SharedModule],
-  exports     : [RolesComponent,CreateRoleComponent, ListRoleComponent, EditRoleComponent],
+  exports     : [RolesComponent,CreateRoleComponent, ListRoleComponent, EditRoleComponent, SetRolePermissionsComponent],
 })
 
 export class RolesModule {}

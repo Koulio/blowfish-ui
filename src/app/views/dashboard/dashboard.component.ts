@@ -28,6 +28,7 @@ export class DashboardComponent implements OnDestroy, OnInit {
   }
 
   public ngOnInit():any {
+    document.body.classList.remove('bg-img');
     this.nav.className += " white-bg";
   }
 

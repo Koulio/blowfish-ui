@@ -45,6 +45,11 @@ constructor(private http: HttpClient,private router: Router,
     this.router.navigate(['../edit'], { relativeTo: this.route });
   }
 
+  setPermissions(role: Role){
+    this.roleService.selectedRole = role;
+    this.router.navigate(['../set'], { relativeTo: this.route });
+  }
+
 
   deleteRole(id: number){
     this.roleService.delete(id)

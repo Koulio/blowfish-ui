@@ -4,4 +4,10 @@
     password: string;
     firstName: string;
     lastName: string;
+    email: string;
+    phone: string;
+    password:string;
+    domainId: number;
+    roleId: number;
+    roleName: string;
 }

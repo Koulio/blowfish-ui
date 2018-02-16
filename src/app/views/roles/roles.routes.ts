@@ -5,6 +5,7 @@ import {RolesComponent} from "./roles.component";
 import { CreateRoleComponent } from './create-role.component';
 import { ListRoleComponent } from './list-role.component';
 import { EditRoleComponent } from './edit-role.component';
+import { SetRolePermissionsComponent } from './set-role-permissions.component';
 
 const rolesRoutes: Routes = [
 	{
@@ -22,7 +23,11 @@ const rolesRoutes: Routes = [
        {
          path: 'edit',
          component: EditRoleComponent
-       }
+       },
+			 {
+				 path: 'set',
+				 component: SetRolePermissionsComponent
+			 }
 	   ]
 	}
 ];

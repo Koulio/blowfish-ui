@@ -3,5 +3,6 @@ export class Permission {
     name: string;
     code: string;
     desc: string;
+    roleId:number;
     status: boolean;
 }

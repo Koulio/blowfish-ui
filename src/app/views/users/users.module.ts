@@ -1,22 +1,20 @@
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 
+import { SharedModule } from '../../shared/shared.module';
+
 import {UsersComponent} from "./users.component";
+import { ListUsersComponent } from './list-users.component';
+import { CreateUsersComponent } from './create-users.component';
+import { EditUsersComponent } from './edit-users.component';
 
-// Chart.js Angular 2 Directive by Valor Software (npm)
-import { ChartsModule } from 'ng2-charts/ng2-charts';
-
-import { FlotModule } from '../../components/charts/flotChart';
-import { IboxtoolsModule } from '../../components/common/iboxtools/iboxtools.module';
-import { PeityModule } from '../../components/charts/peity';
-import { SparklineModule } from '../../components/charts/sparkline';
-import { JVectorMapModule } from '../../components/map/jvectorMap';
+import { UsersRoutes }  from './users.routes';
 
 
 @NgModule({
-  declarations: [UsersComponent],
-  imports     : [BrowserModule,ChartsModule, FlotModule,IboxtoolsModule,PeityModule,SparklineModule,JVectorMapModule],
-  exports     : [UsersComponent],
+  declarations: [UsersComponent, ListUsersComponent, CreateUsersComponent, EditUsersComponent],
+  imports     : [UsersRoutes,BrowserModule,SharedModule],
+  exports     : [UsersComponent, ListUsersComponent, CreateUsersComponent, EditUsersComponent],
 })
 
 export class UsersModule {}

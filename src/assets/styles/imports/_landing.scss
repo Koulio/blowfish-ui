@@ -33,6 +33,22 @@ body.landing-page {
   background-color: #fff;
 }
 
+.bg-img
+{
+  //background-image: image-url("assets/images/landing/header_one.jpg");
+  /* The image used */
+background-image: url("assets/images/landing/header_one.jpg");
+
+/* Full height */
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
 .landing-page {
 
   .container{overflow:hidden;}

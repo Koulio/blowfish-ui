@@ -12,6 +12,8 @@ import { JVectorMapModule } from '../components/map/jvectorMap';
 import { DataTablesModule } from 'angular-datatables';
 // Chart.js Angular 2 Directive by Valor Software (npm)
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { DualListBoxModule } from 'ng2-dual-list-box';
+import { NgxSelectModule } from 'ngx-select-ex';
 
 @NgModule({
   imports: [
@@ -23,7 +25,9 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     IboxtoolsModule,
     JVectorMapModule,
     DataTablesModule,
-    ChartsModule
+    ChartsModule,
+    DualListBoxModule,
+    NgxSelectModule
   ],
   declarations: [AlertComponent],
   exports: [
@@ -35,7 +39,9 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     IboxtoolsModule,
     JVectorMapModule,
     DataTablesModule,
-    ChartsModule
-  ],
+    ChartsModule,
+    DualListBoxModule,
+    NgxSelectModule
+    ],
 })
 export class SharedModule { }

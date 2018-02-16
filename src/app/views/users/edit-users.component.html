@@ -1,0 +1,98 @@
+
+<div class="wrapper wrapper-content animated fadeInRight">
+<div class="row">
+    <div class="col-lg-12">
+      <alert></alert>
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>Edit {{user.firstName}} {{user.lastName}}</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#">Config option 1</a>
+                        </li>
+                        <li><a href="#">Config option 2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+
+              <form class="form-horizontal" name="form" (ngSubmit)="f.form.valid && editUser()" #f="ngForm" novalidate>
+                    <div class="form-group"><label class="col-sm-2 control-label">First Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="firstName" placeholder="First Name" [(ngModel)]="user.firstName" #firstName="ngModel" required />
+                          <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Last Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="lastName" placeholder="Last Name" [(ngModel)]="user.lastName" #lastName="ngModel" required />
+                          <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="email" placeholder="Email" [(ngModel)]="user.email" #email="ngModel" email="true" required />
+                          <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Phone Number</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="phone" placeholder="Phone Number" [(ngModel)]="user.phone" #phone="ngModel" minlength=10 required />
+                          <div *ngIf="f.submitted && !phone.valid" class="help-block">Phone Numberis required</div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Default Password</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="password" placeholder="Default Password" [(ngModel)]="user.password" #password="ngModel" required />
+                          <div *ngIf="f.submitted && !password.valid" class="help-block">Default Password is required</div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Domain</label>
+                        <div class="col-sm-10">
+                          <ngx-select [items]="domains" [(ngModel)]="selectedDomainId" name="selectedDomainId" optionValueField="id" optionTextField="name"></ngx-select>
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Role</label>
+                        <div class="col-sm-10">
+
+                          <ngx-select [items]="roles" [(ngModel)]="selectedRoleId" name="selectedRoleId" optionValueField="id" optionTextField="name"></ngx-select>
+
+
+                      </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <button class="btn btn-primary" type="submit">Edit User</button>
+                        </div>
+                        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

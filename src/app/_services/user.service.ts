@@ -1,29 +1,35 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { environment } from '../../environments/environment';
+
 import { User } from '../_models/index';
 
 @Injectable()
 export class UserService {
+
+  public selectedUser: User;
+
     constructor(private http: HttpClient) { }
 
-    getAll() {
-        return this.http.get<User[]>('/api/users');
-    }
 
-    getById(id: number) {
-        return this.http.get('/api/users/' + id);
-    }
+        getAll() {
+            return this.http.get<User[]>(environment.apiEndpoint + '/user');
+        }
 
-    create(user: User) {
-        return this.http.post('/api/users', user);
-    }
+        getById(id: number) {
+            return this.http.get('/api/user/' + id);
+        }
 
-    update(user: User) {
-        return this.http.put('/api/users/' + user.id, user);
-    }
+        create(user: User) {
+            return this.http.post(environment.apiEndpoint + '/user', user);
+        }
 
-    delete(id: number) {
-        return this.http.delete('/api/users/' + id);
-    }
+        update(user: User) {
+            return this.http.put(environment.apiEndpoint + '/user/' + user.id, user);
+        }
+
+        delete(id: number) {
+            return this.http.delete(environment.apiEndpoint + '/user/' + id);
+        }
 }

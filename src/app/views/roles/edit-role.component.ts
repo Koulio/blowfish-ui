@@ -8,7 +8,7 @@ import { AlertService, RoleService } from '../../_services/index';
 })
 export class EditRoleComponent implements OnInit {
 
-  model: any = {};
+  role: any = {};
   loading = false;
 
   constructor(private alertService: AlertService, private roleService: RoleService) { }
@@ -16,14 +16,14 @@ export class EditRoleComponent implements OnInit {
   ngOnInit() {
 
     if(typeof this.roleService.selectedRole !== "undefined" && this.roleService.selectedRole !== null) {
-      this.model = this.roleService.selectedRole;
+      this.role = this.roleService.selectedRole;
     }
 
   }
 
   editRole() {
       this.loading = true;
-      this.roleService.update(this.model)
+      this.roleService.update(this.role)
           .subscribe(
               data => {
                   this.loading = false;
