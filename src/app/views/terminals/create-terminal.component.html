@@ -6,7 +6,7 @@
 
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-              <h5>Create Permission</h5>
+              <h5>Create Terminal</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -27,33 +27,35 @@
             </div>
             <div class="ibox-content">
 
-              <form class="form-horizontal" name="form" (ngSubmit)="f.form.valid && createPermission()" #f="ngForm" novalidate>
-                    <div class="form-group"><label class="col-sm-2 control-label">Permission Name</label>
+              <form class="form-horizontal" name="form" (ngSubmit)="f.form.valid && createTerminal()" #f="ngForm" novalidate>
+                    <div class="form-group"><label class="col-sm-2 control-label">Terminal Name</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="name" placeholder="Name" [(ngModel)]="model.name" #name="ngModel" required />
-                          <div *ngIf="f.submitted && !name.valid" class="help-block">Permission Name is required</div>
+                          <input type="text" class="form-control" name="name" placeholder="Terminal Name" [(ngModel)]="model.name" #name="ngModel" required />
+                          <div *ngIf="f.submitted && !name.valid" class="help-block">Terminal Name is required</div>
 
                         </div>
                     </div>
 
-                    <div class="form-group"><label class="col-sm-2 control-label">Permission Code</label>
+                    <div class="form-group"><label class="col-sm-2 control-label">Terminal Code</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" name="code" placeholder="Code" [(ngModel)]="model.code" #code="ngModel" required />
-                          <div *ngIf="f.submitted && !code.valid" class="help-block">Permission Code is required</div>
+                          <input type="text" class="form-control" name="code" placeholder="Terminal Code" [(ngModel)]="model.code" #code="ngModel" required />
+                          <div *ngIf="f.submitted && !code.valid" class="help-block">Terminal Code is required</div>
 
                         </div>
                     </div>
 
-                    <div class="form-group"><label class="col-sm-2 control-label">Description</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" name="desc" placeholder="Description" [(ngModel)]="model.desc" #desc="ngModel" />
-                        </div>
+                    <div class="form-group"><label class="col-sm-2 control-label">Terminal Owner</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="owner" placeholder="Terminal Owner" [(ngModel)]="model.owner" #owner="ngModel" required />
+                        <div *ngIf="f.submitted && !code.valid" class="help-block">Terminal Owner is required</div>
+
+                      </div>
                     </div>
 
                     <div class="hr-line-dashed"></div>
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-2">
-                            <button class="btn btn-primary" type="submit">Save changes</button>
+                            <button class="btn btn-primary" type="submit">Create Terminal</button>
                         </div>
                         <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
                     </div>

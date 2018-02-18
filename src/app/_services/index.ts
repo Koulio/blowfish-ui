@@ -4,3 +4,4 @@ export * from './user.service';
 export * from './domain.service';
 export * from './role.service';
 export * from './permissions.service';
+export * from './terminals.service';

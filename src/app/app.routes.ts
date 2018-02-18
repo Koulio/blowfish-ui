@@ -16,11 +16,17 @@ import {RolesComponent} from "./views/roles/roles.component";
 import {CreateRoleComponent} from "./views/roles/create-role.component";
 import {ListRoleComponent} from "./views/roles/list-role.component";
 import {EditRoleComponent} from "./views/roles/edit-role.component";
+
 import { SetRolePermissionsComponent } from './views/roles/set-role-permissions.component';
 import { PermissionsComponent} from "./views/permissions/permissions.component";
 import { CreatePermissionsComponent } from './views/permissions/create-permissions.component';
 import { ListPermissionsComponent } from './views/permissions/list-permissions.component';
 import { EditPermissionsComponent } from './views/permissions/edit-permissions.component';
+
+import { TerminalsComponent} from "./views/terminals/terminals.component";
+import { ListTerminalsComponent } from './views/terminals/list-terminals.component';
+import { CreateTerminalComponent } from './views/terminals/create-terminal.component';
+import { EditTerminalComponent } from './views/terminals/edit-terminal.component';
 
 
 import {BlankLayoutComponent} from "./components/common/layouts/blankLayout.component";
@@ -95,7 +101,8 @@ export const ROUTES:Routes = [
            component: SetRolePermissionsComponent
          }
   	   ]},
-       {path: 'permissions',
+       {
+         path: 'permissions',
              component: PermissionsComponent,
              children: [
         {
@@ -110,7 +117,25 @@ export const ROUTES:Routes = [
             path: 'edit',
             component: EditPermissionsComponent
           }
-       ]}
+       ]},
+       {
+         path: 'terminals',
+                component: TerminalsComponent,
+                children: [
+           {
+              path: 'create',
+              component: CreateTerminalComponent
+           },
+           {
+              path: 'list',
+              component: ListTerminalsComponent
+            },
+             {
+               path: 'edit',
+               component: EditTerminalComponent
+             }
+          ]
+       }
     ]
   },
 

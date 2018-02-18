@@ -6,8 +6,7 @@
     lastName: string;
     email: string;
     phone: string;
-    password:string;
     domainId: number;
     roleId: number;
-    roleName: string;
+    roleName: string; 
 }
