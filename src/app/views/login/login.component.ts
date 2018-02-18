@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
       document.body.classList.add('bg-img');
 
+
         // reset login status
         this.authenticationService.logout();
 
