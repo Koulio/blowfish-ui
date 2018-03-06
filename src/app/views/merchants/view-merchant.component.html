@@ -1,0 +1,104 @@
+<div class="row">
+
+<div class="col-lg-4">
+        <div class="widget-head-color-box navy-bg p-lg text-center">
+            <div class="m-b-md">
+            <h2 class="font-bold no-margins">
+                {{merchant.name}}
+            </h2>
+                <small>{{merchant.email}}</small>
+            </div>
+            <img src="assets/images/a4.jpg" class="img-circle circle-border m-b-md" alt="profile">
+            <div>
+                <span>{{merchant.phone}}</span>
+            </div>
+        </div>
+        <div class="widget-text-box">
+          <!-- <a (click)="manageMerchant()"><button type="button" class="btn btn-block btn-outline btn-primary">Manage Merchant Outlets</button></a> -->
+        </div>
+</div>
+
+<div class="col-lg-8">
+    <div class="ibox float-e-margins" style="margin:10px">
+        <div class="ibox-title">
+            <h5>{{merchant.name}}'s Terminals</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+                <a class="close-link">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table table-hover margin bottom">
+                        <thead>
+                        <tr>
+                            <th style="width: 1%" class="text-center">No.</th>
+                            <th>Terminal Name</th>
+                            <th>Terminal Location</th>
+                            <th class="text-center">Today</th>
+                            <th class="text-center">Month</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td> Security doors</td>
+                            <td> {{merchant.address}}</td>
+                            <td class="text-center"><span class="label label-primary">$327.00</span></td>
+                            <td class="text-center"><span class="label label-primary">$483.00</span></td>
+
+                        </tr>
+                        <tr>
+                            <td class="text-center">2</td>
+                            <td> Wardrobes
+                            </td>
+                            <td> {{merchant.address}}</td>
+                            <td class="text-center"><span class="label label-warning">$125.00</span></td>
+                            <td class="text-center"><span class="label label-primary">$327.00</span></td>
+
+                        </tr>
+                        <tr>
+                            <td class="text-center">3</td>
+                            <td> Set of tools
+                            </td>
+                            <td> {{merchant.address}}</td>
+                            <td class="text-center"><span class="label label-warning">$125.00</span></td>
+                            <td class="text-center"><span class="label label-warning">$125.00</span></td>
+
+                        </tr>
+                        <tr>
+                            <td class="text-center">4</td>
+                            <td> Panoramic pictures</td>
+                            <td> {{merchant.address}}</td>
+                            <td class="text-center"><span class="label label-warning">$125.00</span></td>
+                            <td class="text-center"><span class="label label-primary">$344.00</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">5</td>
+                            <td>Phones</td>
+                            <td> {{merchant.address}}/td>
+                            <td class="text-center"><span class="label label-warning">$125.00</span></td>
+                            <td class="text-center"><span class="label label-primary">$235.00</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">6</td>
+                            <td>Monitors</td>
+                            <td> {{merchant.address}}/td>
+                            <td class="text-center"><span class="label label-warning">$125.00</span></td>
+                            <td class="text-center"><span class="label label-primary">$100.00</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+        </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -16,6 +16,7 @@ import {DomainModule} from "./views/domain/domain.module";
 import {UsersModule} from "./views/users/users.module";
 import {RolesModule} from "./views/roles/roles.module";
 import {PermissionsModule} from "./views/permissions/permissions.module";
+import {MerchantsModule} from "./views/merchants/merchants.module";
 import {TerminalsModule} from "./views/terminals/terminals.module";
 
 
@@ -45,6 +46,7 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
     UsersModule,
     RolesModule,
     PermissionsModule,
+    MerchantsModule,
     TerminalsModule,
     RouterModule.forRoot(ROUTES)
   ],

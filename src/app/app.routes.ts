@@ -23,11 +23,18 @@ import { CreatePermissionsComponent } from './views/permissions/create-permissio
 import { ListPermissionsComponent } from './views/permissions/list-permissions.component';
 import { EditPermissionsComponent } from './views/permissions/edit-permissions.component';
 
+
+import { MerchantsComponent } from './views/merchants/merchants.component';
+import { ListMerchantsComponent } from './views/merchants/list-merchants.component';
+import { CreateMerchantsComponent } from './views/merchants/create-merchants.component';
+import { EditMerchantsComponent } from './views/merchants/edit-merchants.component';
+import { ViewMerchantComponent } from './views/merchants/view-merchant.component';
+
 import { TerminalsComponent} from "./views/terminals/terminals.component";
 import { ListTerminalsComponent } from './views/terminals/list-terminals.component';
 import { CreateTerminalComponent } from './views/terminals/create-terminal.component';
 import { EditTerminalComponent } from './views/terminals/edit-terminal.component';
-
+import { AssignTerminalComponent } from './views/terminals/assign-terminal.component';
 
 import {BlankLayoutComponent} from "./components/common/layouts/blankLayout.component";
 import {BasicLayoutComponent} from "./components/common/layouts/basicLayout.component";
@@ -119,6 +126,28 @@ export const ROUTES:Routes = [
           }
        ]},
        {
+         path: 'merchants',
+                component: MerchantsComponent,
+                children: [
+           {
+              path: 'create',
+              component: CreateMerchantsComponent
+           },
+           {
+              path: 'list',
+              component: ListMerchantsComponent
+            },
+             {
+               path: 'edit',
+               component: EditMerchantsComponent
+             },
+             {
+               path: 'view',
+               component: ViewMerchantComponent
+             }
+          ]
+       },
+       {
          path: 'terminals',
                 component: TerminalsComponent,
                 children: [
@@ -133,6 +162,10 @@ export const ROUTES:Routes = [
              {
                path: 'edit',
                component: EditTerminalComponent
+             },
+             {
+               path: 'assign',
+               component: AssignTerminalComponent
              }
           ]
        }

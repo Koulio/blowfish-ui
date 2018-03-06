@@ -12,22 +12,22 @@ export class TerminalsService {
     constructor(private http: HttpClient) { }
 
     getAll() {
-        return this.http.get<Terminal[]>(environment.apiEndpoint + '/terminal');
+        return this.http.get<Terminal[]>(environment.apiEndpoint + '/terminals');
     }
 
     getById(id: number) {
-        return this.http.get('/api/terminal/' + id);
+        return this.http.get('/api/terminals/' + id);
     }
 
     create(terminal: Terminal) {
-        return this.http.post(environment.apiEndpoint + '/terminal', terminal);
+        return this.http.post(environment.apiEndpoint + '/terminals', terminal);
     }
 
     update(terminal: Terminal) {
-        return this.http.put(environment.apiEndpoint + '/terminal/' + terminal.id, terminal);
+        return this.http.put(environment.apiEndpoint + '/terminals/' + terminal.id, terminal);
     }
 
     delete(id: number) {
-        return this.http.delete(environment.apiEndpoint + '/terminal/' + id);
+        return this.http.delete(environment.apiEndpoint + '/terminals/' + id);
     }
 }

@@ -14,6 +14,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { DualListBoxModule } from 'ng2-dual-list-box';
 import { NgxSelectModule } from 'ngx-select-ex';
+import { Ng2CompleterModule } from "ng2-completer";
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { NgxSelectModule } from 'ngx-select-ex';
     DataTablesModule,
     ChartsModule,
     DualListBoxModule,
-    NgxSelectModule
+    NgxSelectModule,
+    Ng2CompleterModule
   ],
   declarations: [AlertComponent],
   exports: [
@@ -41,7 +43,8 @@ import { NgxSelectModule } from 'ngx-select-ex';
     DataTablesModule,
     ChartsModule,
     DualListBoxModule,
-    NgxSelectModule
+    NgxSelectModule,
+    Ng2CompleterModule
     ],
 })
 export class SharedModule { }

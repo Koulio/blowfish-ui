@@ -5,6 +5,7 @@ import { TerminalsComponent} from "./terminals.component";
 import { ListTerminalsComponent } from './list-terminals.component';
 import { CreateTerminalComponent } from './create-terminal.component';
 import { EditTerminalComponent } from './edit-terminal.component';
+import { AssignTerminalComponent } from './assign-terminal.component';
 
 const terminalsRoutes: Routes = [
 	{
@@ -22,7 +23,11 @@ const terminalsRoutes: Routes = [
        {
          path: 'edit',
          component: EditTerminalComponent
-       }
+       },
+			 {
+				 path: 'assign',
+				 component: AssignTerminalComponent
+			 }
 	   ]
 	}
 ];

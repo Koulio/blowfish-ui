@@ -4,10 +4,10 @@ import { CompleterService, CompleterData, RemoteData } from "ng2-completer";
 import { AlertService, TerminalsService } from '../../_services/index';
 
 @Component({
-  selector: 'app-create-terminal',
-  templateUrl: './create-terminal.component.html'
+  selector: 'app-assign-terminal',
+  templateUrl: './assign-terminal.component.html'
 })
-export class CreateTerminalComponent implements OnInit {
+export class AssignTerminalComponent implements OnInit {
 
   model: any = {};
   loading = false;
@@ -21,16 +21,20 @@ this.dataService.urlFormater(term => {
    }
 
   ngOnInit() {
+
+    if(typeof this.terminalsService.selectedTerminal !== "undefined" && this.terminalsService.selectedTerminal !== null) {
+      this.model = this.terminalsService.selectedTerminal;
+    }
+
   }
 
-
-  createTerminal() {
+  reAssignTerminal() {
       this.loading = true;
-      this.terminalsService.create(this.model)
+      this.terminalsService.update(this.model)
           .subscribe(
               data => {
                   this.loading = false;
-                  this.alertService.success('Terminal created successfully.')
+                  this.alertService.success('Terminal assigned to merchant successfully.')
               },
               error => {
                   this.alertService.error(error);

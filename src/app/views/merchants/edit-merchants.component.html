@@ -1,0 +1,75 @@
+
+<div class="wrapper wrapper-content animated fadeInRight">
+<div class="row">
+    <div class="col-lg-12">
+      <alert></alert>
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+              <h5>Edit {{merchant.name}}</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#">Config option 1</a>
+                        </li>
+                        <li><a href="#">Config option 2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+
+              <form class="form-horizontal" name="form" (ngSubmit)="f.form.valid && editMerchant()" #f="ngForm" novalidate>
+                    <div class="form-group"><label class="col-sm-2 control-label">Merchant Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="name" placeholder="Merchant Name" [(ngModel)]="merchant.name" #name="ngModel" required />
+                          <div *ngIf="f.submitted && !name.valid" class="help-block">Merchant Name is required</div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Merchant Address</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="address" placeholder="Merchant Address" [(ngModel)]="merchant.address" #address="ngModel" required />
+                          <div *ngIf="f.submitted && !address.valid" class="help-block">Merchant Address is required</div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="email" placeholder="Email" [(ngModel)]="merchant.email" #email="ngModel" email="true" required />
+                          <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Phone Number</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" name="phone" placeholder="Phone Number" [(ngModel)]="merchant.phone" #phone="ngModel" minlength=10 required />
+                          <div *ngIf="f.submitted && !phone.valid" class="help-block">Phone Numberis required</div>
+
+                        </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <button class="btn btn-primary" type="submit">Edit Merchant</button>
+                        </div>
+                        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

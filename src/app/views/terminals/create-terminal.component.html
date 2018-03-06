@@ -28,13 +28,13 @@
             <div class="ibox-content">
 
               <form class="form-horizontal" name="form" (ngSubmit)="f.form.valid && createTerminal()" #f="ngForm" novalidate>
-                    <div class="form-group"><label class="col-sm-2 control-label">Terminal Name</label>
+                    <!-- <div class="form-group"><label class="col-sm-2 control-label">Terminal Name</label>
                         <div class="col-sm-10">
                           <input type="text" class="form-control" name="name" placeholder="Terminal Name" [(ngModel)]="model.name" #name="ngModel" required />
                           <div *ngIf="f.submitted && !name.valid" class="help-block">Terminal Name is required</div>
 
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group"><label class="col-sm-2 control-label">Terminal Code</label>
                         <div class="col-sm-10">
@@ -44,13 +44,98 @@
                         </div>
                     </div>
 
-                    <div class="form-group"><label class="col-sm-2 control-label">Terminal Owner</label>
+                    <div class="form-group"><label class="col-sm-2 control-label">Serial Number</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" name="owner" placeholder="Terminal Owner" [(ngModel)]="model.owner" #owner="ngModel" required />
-                        <div *ngIf="f.submitted && !code.valid" class="help-block">Terminal Owner is required</div>
+                        <input type="text" class="form-control" name="serialNo" placeholder="Serial Number" [(ngModel)]="model.serialNo" #serialNo="ngModel" required />
+                        <div *ngIf="f.submitted && !serialNo.valid" class="help-block">Serial Number is required</div>
+                      </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Manufacturer</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="manufacturer" placeholder="Manufacturer" [(ngModel)]="model.manufacturer" #manufacturer="ngModel" required />
+                        <div *ngIf="f.submitted && !manufacturer.valid" class="help-block">Manufacturer is required</div>
 
                       </div>
                     </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Model No</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="modelNo" placeholder="Model No" [(ngModel)]="model.modelNo" #modelNo="ngModel" required />
+                        <div *ngIf="f.submitted && !modelNo.valid" class="help-block">Model No is required</div>
+
+                      </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Build No</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="buildNo" placeholder="Build No" [(ngModel)]="model.buildNo" #buildNo="ngModel" required />
+                        <div *ngIf="f.submitted && !buildNo.valid" class="help-block">Build No is required</div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Operating System</label>
+
+                        <div class="col-sm-10">
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <input type="text" class="form-control" name="os" placeholder="Operation System" [(ngModel)]="model.os" #os="ngModel" required />
+                                  <div *ngIf="f.submitted && !os.valid" class="help-block">Operation System is required</div>
+                                </div>
+                                <div class="col-md-4">
+                                  <input type="text" class="form-control" name="osVersion" placeholder="Operation System Version" [(ngModel)]="model.osVersion" #osVersion="ngModel" required />
+                                  <div *ngIf="f.submitted && !osVersion.valid" class="help-block">Operation System Version is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="form-group"><label class="col-sm-2 control-label">Operation System</label> -->
+                      <!-- <div class="col-sm-10">
+                        <input type="text" class="form-control" name="os" placeholder="Operation System" [(ngModel)]="model.os" #os="ngModel" required />
+                        <div *ngIf="f.submitted && !os.valid" class="help-block">Operation System is required</div>
+                      </div>
+                    </div> -->
+
+                    <!-- <div class="form-group"><label class="col-sm-2 control-label">Operation System Version</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="osVersion" placeholder="Operation System Version" [(ngModel)]="model.osVersion" #osVersion="ngModel" required />
+                        <div *ngIf="f.submitted && !osVersion.valid" class="help-block">Operation System Version is required</div>
+                      </div>
+                    </div> -->
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Firmware No</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="firmwareNo" placeholder="Firmware No" [(ngModel)]="model.firmwareNo" #firmwareNo="ngModel" required />
+                        <div *ngIf="f.submitted && !firmwareNo.valid" class="help-block">Firmware No is required</div>
+                      </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Description</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="description" placeholder="Description" [(ngModel)]="model.description" #description="ngModel" required />
+                        <div *ngIf="f.submitted && !description.valid" class="help-block">Descriptionis required</div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group float-e-margins"><h5 style="margin:15px"> Assign terminal to a Merchant</h5>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">Merchant Name</label>
+                      <div class="col-sm-10">
+                        <ng2-completer inputClass="form-control"  name="merchantId"  [(ngModel)]="model.merchantId" [datasource]="dataService" [minSearchLength]="2"
+                  (selected)="merchantSelected($event)" ></ng2-completer>
+                      </div>
+                  </div>
+
+
+
 
                     <div class="hr-line-dashed"></div>
                     <div class="form-group">

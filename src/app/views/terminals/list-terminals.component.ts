@@ -43,6 +43,11 @@ constructor(private http: HttpClient,private router: Router,
     this.router.navigate(['../edit'], { relativeTo: this.route });
   }
 
+  reAssignTerminal(terminal: Terminal){
+    this.terminalsService.selectedTerminal= terminal;
+    this.router.navigate(['../assign'], { relativeTo: this.route });
+  }
+
 
   deleteTerminal(id: number){
     this.terminalsService.delete(id)
